@@ -21,10 +21,10 @@ def summarize_node(state:MessagesState):
     topic = state['messages'][-1].content
     writer('starting summarazing topic.......')
     time.sleep(2)
-    history = "\n".join(msg.content for msg in state["messages"])
-    summary  = f"""this is  summamry on given by llm on  topic:{topic}"""
-    # summary = stream_model.invoke([{"role": "system", "content": "Summarize the following conversation:"},
-                        #   {"role": "assistant", "content": history}])
+    content = "\n".join(msg.content for msg in state["messages"][-1])
+    # summary  = f"""this is  summamry on given by llm on  topic}"""
+    prompt = ChatPromptTemplate.from_messages([SystemMessage(content="your are helpful assistant , summarize the content by user "),HumanMessage(content=f"{content}")])
+    summary = stream_model.invoke(prompt)
     return {"messages": [AIMessage(content=summary)]}
 
 # Setup the graph
