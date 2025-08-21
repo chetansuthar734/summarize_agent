@@ -9,7 +9,7 @@ from typing import TypedDict, List,Annotated
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 # model = ChatGoogleGenerativeAI(model='gemini-2.0-flash',api_key="AIzaSyDK1CNcAh***********k2U51Rug",disable_streaming=True)
-stream_model = ChatGoogleGenerativeAI(model='gemini-1.5-flash',api_key="AIzaSyDK1CNcAhSrM4qy3UVIXLu7J7Qk2U51Rug")
+stream_model = ChatGoogleGenerativeAI(model='gemini-1.5-flash',api_key="AIzaSy**************k2U51Rug")
 
 
 
