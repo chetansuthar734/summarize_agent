@@ -26,7 +26,7 @@ def summarize_node(state:MessagesState):
     context = state["messages"][-1].content
     # print(context)
 
-    prompt = ChatPromptTemplate.from_messages([('system',"your are helpful assistant , summarize the content given anser in bullet point , max 5 point "),("human","{context}")]).format_messages(context=context)
+    prompt = ChatPromptTemplate.from_messages([('system',"your are helpful assistant , summarize the content given anser in bullet point , most important point "),("human","{context}")]).format_messages(context=context)
     summary = stream_model.invoke(prompt)
     return {"messages": [summary]}
 
